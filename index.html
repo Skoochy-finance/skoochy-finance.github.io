@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8646428190784221"></script>
@@ -1203,5 +1202,7 @@ document.addEventListener("visibilitychange",()=>{
  async function enterFs(){try{if(root.requestFullscreen)await root.requestFullscreen({navigationUI:'hide'});else root.classList.add('sf-terminal-immersive');}catch(e){root.classList.add('sf-terminal-immersive');}try{if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');}catch(e){}syncFs();}
  async function exitFs(){try{if(document.fullscreenElement===root)await document.exitFullscreen();}catch(e){}root.classList.remove('sf-terminal-immersive');try{screen.orientation?.unlock?.();}catch(e){}syncFs();}
  fsBtn.addEventListener('click',()=>isFull()?exitFs():enterFs());document.addEventListener('fullscreenchange',syncFs);document.addEventListener('keydown',e=>{if(e.key==='Escape')root.classList.remove('sf-terminal-immersive');syncFs();});window.addEventListener('resize',syncFs);syncFs();
-})();</script></body>
+})();
+</script>
+</body>
 </html>
