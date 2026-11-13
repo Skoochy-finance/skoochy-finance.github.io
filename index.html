@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8646428190784221"></script>
@@ -1190,5 +1189,7 @@ document.addEventListener("visibilitychange",()=>{
  document.getElementById('sfPaperBuy').addEventListener('click',()=>open('BUY'));document.getElementById('sfPaperSell').addEventListener('click',()=>open('SELL'));
  posEl.addEventListener('click',e=>{const b=e.target.closest('[data-close]');if(!b)return;const p=positions.find(x=>x.id===Number(b.dataset.close));if(!p)return;const exit=Number(prompt('Saisissez le prix de clôture observé sur le graphique :',String(p.entry)));if(!(exit>0)){msg.textContent='Clôture annulée : prix invalide.';return;}const pnl=(p.side==='BUY'?exit-p.entry:p.entry-exit)*p.qty;balance+=p.entry*p.qty+pnl;positions=positions.filter(x=>x.id!==p.id);msg.textContent='Position clôturée en démo. Résultat simulé : '+money(pnl)+'.';render();});
  render();
-})();</script></body>
+})();
+</script>
+</body>
 </html>
