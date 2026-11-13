@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8646428190784221"></script>
@@ -1104,6 +1103,5 @@ document.addEventListener("visibilitychange",()=>{
 // Immersive Market Lab controls: enter fullscreen from a user gesture; request landscape where supported.
 (()=>{const market=document.getElementById("trading"),btn=document.getElementById("sfMarketFullscreen"),label=document.getElementById("sfFullscreenLabel"),tip=document.getElementById("sfLandscapeTip"),rotate=document.getElementById("sfRotateScreen");if(!market||!btn)return;const isImmersive=()=>document.fullscreenElement===market||market.classList.contains("sf-market-immersive");function sync(){const on=isImmersive();btn.setAttribute("aria-pressed",String(on));if(label)label.textContent=on?"Kite ekran konplè":"Ekran konplè";btn.setAttribute("aria-label",on?"Quitter le plein écran":"Activer le plein écran");if(tip)tip.style.display=(!on&&window.matchMedia("(max-width: 700px)").matches)?"block":"none";}async function requestLandscape(){try{if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock("landscape");}catch(e){/* Some browsers allow orientation lock only in installed apps. */}}async function enter(){try{if(market.requestFullscreen){await market.requestFullscreen({navigationUI:"hide"});}else{market.classList.add("sf-market-immersive");}}catch(e){market.classList.add("sf-market-immersive");}await requestLandscape();sync();}async function leave(){try{if(document.fullscreenElement===market&&document.exitFullscreen)await document.exitFullscreen();}catch(e){}market.classList.remove("sf-market-immersive");try{screen.orientation?.unlock?.();}catch(e){}sync();}btn.addEventListener("click",()=>isImmersive()?leave():enter());rotate?.addEventListener("click",requestLandscape);document.addEventListener("fullscreenchange",()=>{if(document.fullscreenElement!==market)market.classList.remove("sf-market-immersive");sync();});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.fullscreenElement)market.classList.remove("sf-market-immersive");sync();});window.addEventListener("resize",sync);sync();})();
 </script>
-
 </body>
 </html>
